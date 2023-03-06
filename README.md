@@ -4,7 +4,7 @@
 
   → **Monolithic architecture** : multiple components are combined in single large app.
 
-      example :- Blogging app
+      example :- Blogging app refer this 👉https://github.com/ahtishamkhan5678/Blogging_Application_APIs
 
   →  Single code base
 
