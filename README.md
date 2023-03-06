@@ -1,5 +1,7 @@
 # Microservice (Under Process)....
 
+<img src ="https://insights.codewave.com/wp-content/uploads/2022/08/microservices-architecture-ecommerce-application-development.gif" />
+
 ## Before microservices
 
   → **Monolithic architecture** : multiple components are combined in single large app.
