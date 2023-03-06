@@ -6,8 +6,6 @@
 
   → example :- Blogging app refer this 👉[clickMe](https://github.com/ahtishamkhan5678/Blogging_Application_APIs)
 
-   
-      
   →  Single code base
 
   → Deployed in single bundle
@@ -20,7 +18,9 @@
 
   → Cumbersome over time 
 
+
 ### **Reason why we need Microservices** : *To Overcomes such  above problem ;*
+
 
 ### Advantages of **Microservices** :
 
@@ -32,8 +32,5 @@
 
   → Different tech stack
 
-### Disadvantages of **Microservices** :
-
- → **Handling microservices is complex**
 
 
