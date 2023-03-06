@@ -1,0 +1,110 @@
+
+server :
+
+ port : 8081
+ 
+spring :
+  application:
+    name:  USER-SERVICE 
+  datasource:
+  
+    url: jdbc:mysql://localhost:3306/microservices
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+ 
+  
+    
+  config:
+    import: optional:configserver:http://localhost:8085 
+    
+  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri:  https://dev-31021739.okta.com/oauth2/default
+      client:
+        registration:
+          my-internal-client:
+            provider: okta
+            authorization-grant-type: client_credentials
+            scope: internal
+            client-id: 0oa8lg3za1T6AcgRS5d7
+            client-secret: K7KgRirTTxhPolIzq7Rs9s1FtP4ThRp_KOoaQKtu
+
+        provider:
+          okta:
+            issuer-uri:  https://dev-31021739.okta.com/oauth2/default  
+  
+#  profiles:
+#    active: Prod
+  
+  jpa:
+   hibernate:
+      ddl-auto: update
+   show-sql: true 
+   
+   
+management:
+
+  health:
+    circuitbreakers:
+      enabled: true
+      
+  endpoints:
+    web:
+      exposure:
+       include: health 
+
+  endpoint:
+    health:
+      show-details: always 
+       
+      
+resilience4j:
+  circuitbreaker:
+    instances:
+      ratingHotelBreaker:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED   
+        
+  retry:
+    instances:
+      ratingHotelService:
+        max-attempts: 3
+        wait-duration: 5s  
+        
+        
+okta:
+  oauth2:
+    issuer: https://dev-31021739.okta.com/oauth2/default
+    audience: api://default        
+        
+        
+#  ratelimiter:
+#    instances:
+#      userRateLimiter:
+#        limit-refresh-period: 4s
+#        limit-for-period: 2
+#        timeout-duration: 2s 
+               
+   
+#eureka:
+#  instance:
+#   prefer-ip-address: true
+#  client:
+#    fetch-registry: true 
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka  
+ 
+    
