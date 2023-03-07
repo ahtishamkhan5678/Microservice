@@ -10,7 +10,7 @@
 
    example :- Blogging app refer this 👉[clickMe](https://github.com/ahtishamkhan5678/Blogging_Application_APIs)
 
-            →  Single code base
+            → Single code base
 
             → Deployed in single bundle
 
