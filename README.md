@@ -1,4 +1,4 @@
-# Microservice (Under Process)....
+ 
 
 <img src ="https://insights.codewave.com/wp-content/uploads/2022/08/microservices-architecture-ecommerce-application-development.gif" />
 
@@ -44,7 +44,7 @@
 
             → Different tech stack
 
-### Feature of **Project** :
+### Feature of **My Project** :
 
              →  Creating rating microservices 
              →  Implementing service registry server
