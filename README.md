@@ -44,7 +44,7 @@
 
             → Different tech stack
 
-### Feature of **My Project** :
+### Feature of  **My Project** :
 
              →  Creating rating microservices 
              →  Implementing service registry server
